@@ -29,13 +29,13 @@ RUN apt-get install -y libmagickwand-dev \
     && docker-php-ext-enable imagick
 
 # intl extension configure and install
-RUN docker-php-ext-configure intl && docker-php-ext-install intl
+# RUN docker-php-ext-configure intl && docker-php-ext-install intl
 
-# other extensions install
-RUN docker-php-ext-install bcmath calendar exif gmp mysqli pdo pdo_mysql zip
+# # other extensions install
+# RUN docker-php-ext-install bcmath calendar exif gmp mysqli pdo pdo_mysql zip
 
-# installing composer
-COPY --from=composer:2.7 /usr/bin/composer /usr/local/bin/composer
+# # installing composer
+# COPY --from=composer:2.7 /usr/bin/composer /usr/local/bin/composer
 
 # installing node js
 COPY --from=node:23 /usr/local/lib/node_modules /usr/local/lib/node_modules
