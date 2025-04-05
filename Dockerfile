@@ -35,7 +35,7 @@ RUN apt-get install -y libmagickwand-dev \
 # RUN docker-php-ext-install bcmath calendar exif gmp mysqli pdo pdo_mysql zip
 
 # # installing composer
-# COPY --from=composer:2.7 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.7 /usr/bin/composer /usr/local/bin/composer
 
 # installing node js
 COPY --from=node:23 /usr/local/lib/node_modules /usr/local/lib/node_modules
